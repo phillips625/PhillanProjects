@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+      var dates = <%- dates %>;
+      var siteList = <%- siteList %>;
+      console.log(dates);
+      console.log(siteList);
+    </script>
+    <!-- Include meta tag to ensure proper rendering and touch zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Include jQuery Mobile stylesheets -->
+    <link rel="stylesheet" href="/assets/css/mob/jquery.mobile-1.4.5.min.css">
+    <!-- Include the jQuery library -->
+    <script src="/assets/js/mob/jquery-1.11.3.min.js"></script>
+    <!-- Include the jQuery Mobile library -->
+    <script src="/assets/js/mob/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/mob/NodeInspMob.css">
+    <!-- <script src="/assets/js/mob/mainJS.js"></script> <!--button click functions--> -->
+    <script src="/assets/js/mob/jquery-momentum-scroll.js"></script>
+
+    <!-- <link type="text/css" rel="stylesheet" href="/assets/css/mob/tree.css"/> -->
+    <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js" type="text/javascript"></script> -->
+
+    <!-- <script src="http://d3js.org/d3.v3.min.js"></script> -->
+    <!-- <script src="/assets/csvCascade.js" type="text/javascript"></script> -->
+    <!-- <script src="/assets/js/complex.min.js" charset="UTF-8"></script> -->
+    <!-- <script src="/assets/js/CableLabs.js" type="text/javascript"></script> -->
+    <!-- <script src="/assets/js/pre_eq.js" type="text/javascript"></script> -->
+    <!-- <script src="/assets/js/moment.js"></script> -->
+
+    <!-- <script src="/assets/js/eqManipulator.js" type="text/javascript"></script> -->
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="/assets/css/mob/jquery.dataTables.min.css"/>
+
+    <script src="/assets/selectDate_backup.js" type="text/javascript"></script> <!--Drop down menu-->
+    <link rel="apple-touch-icon" sizes="192x192" href='https://themighty.com/wp-content/uploads/2015/07/virgin-media.jpeg'>
+    <link rel="apple-touch-startup-image" href="http://www.brayleino.co.uk/media/1452/virgin-logo.png">
+    <link rel="icon" sizes="192x192" href="https://themighty.com/wp-content/uploads/2015/07/virgin-media.jpeg">
+</head>
+<body>
+    <div data-role="page" id="pageone">
+      <% include partials/navHeader.ejs %>
+
+      <div data-role="main" class="ui-content" id="content1">
+        <table id="nodeRank" style="width:100%;">
+          <thead>
+            <tr>
+              <th style="width:100%; border-radius: 10px;"><h5>Node Rank</h5></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="vertical-align: top;">
+                <!-- Node Health Table -->
+                <% include partials/dateSelector.ejs %>
+                <% include partials/siteSelectorHome.ejs %>
+              </td>
+            </tr>
+            <tr>
+              <td style="vertical-align: top;" id='tableUnderHere'>
+                <!-- Node Health Table -->
+                <!-- <table id="nodeStatsHome" width="100%"></table> -->
+              </td>
+            </tr>
+          <tbody>
+        </table>
+      <div class="ui-grid-solo" id='clearSpace' style="height:50px"></div>
+      </div>
+
+      <% include partials/navFooterNodal.ejs %>
+    </div>
+
+    
+
+    <div data-role="page" id="pagetwo">
+      <% include partials/navHeader.ejs %>
+
+      <div data-role="main" class="ui-content" id="content2">
+        <table id="SingleMacView" style="width:100%;">
+          <thead>
+            <tr>
+              <th style="width:50%; border-radius: 10px;"><h5>Single MAC View</h5></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="vertical-align: top;">
+                <!-- Correlatino Page -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="ui-grid-solo" id='clearSpace' style="height:50px"></div>
+      </div>
+
+      <% include partials/navFooterNodal.ejs %>
+    </div>
+</body>
+</html>
